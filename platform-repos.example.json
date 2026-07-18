@@ -2,7 +2,7 @@
   "defaultGroup": "platform-bases",
   "groups": {
     "platform-bases": {
-      "description": "Workspace base templates — FE / BE / fullstack / docs / tests / MCP",
+      "description": "Workspace base templates \u2014 FE / BE / fullstack / docs / tests / MCP",
       "primary": "portal",
       "projects": [
         "portal",
@@ -115,7 +115,7 @@
       "stack": "dotnet-line",
       "repo": "line",
       "skill": "platform-base",
-      "description": "Base WinForms — override in platform-repos.local.json for D:/workspace/line",
+      "description": "Base WinForms \u2014 override in platform-repos.local.json for D:/workspace/line",
       "write": true
     },
     "base-docs": {
@@ -124,7 +124,7 @@
       "stack": "docs-c4",
       "repo": "base-docs",
       "skill": "platform-ai",
-      "description": "Base docs hub (R2) — C4 + product Code/common",
+      "description": "Base docs hub (R2) \u2014 C4 + product Code/common",
       "write": true,
       "specRoots": {
         "architecture": "architecture",
@@ -143,7 +143,7 @@
       "stack": "e2e-plans",
       "repo": "base-tests",
       "skill": "platform-ai",
-      "description": "Base tests hub (R3) — E2E yaml/md plans only",
+      "description": "Base tests hub (R3) \u2014 E2E yaml/md plans only",
       "write": true,
       "testRoots": {
         "landscape": "landscape",
@@ -158,7 +158,7 @@
       "stack": "mcp",
       "repo": "artifactgraph",
       "skill": "platform-ai",
-      "description": "Local MCP artifactgraph — gaps/tags/gen allowlist (raintr91/artifactgraph)",
+      "description": "Local MCP artifactgraph \u2014 gaps/tags/gen allowlist (raintr91/artifactgraph)",
       "write": true
     },
     "nuxt-nest-fe": {

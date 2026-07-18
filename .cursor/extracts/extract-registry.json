@@ -4,15 +4,28 @@
     "core": [
       ".cursor/extracts/core/agent-discipline.md"
     ],
-    "test": [
+    "platform-ai": [
+      ".cursor/extracts/core/agent-discipline.md"
+    ],
+    "platform-base": [
+      ".cursor/extracts/core/agent-discipline.md"
+    ],
+    "prototype": [
+      ".cursor/extracts/core/agent-discipline.md",
+      ".cursor/extracts/codegen/tags.md"
+    ],
+    "grill-prototype": [
       ".cursor/extracts/core/agent-discipline.md",
       ".cursor/extracts/test/readiness.md",
       ".cursor/extracts/verify-gate.md"
     ],
-    "grill-test": [
+    "wire": [
       ".cursor/extracts/core/agent-discipline.md",
-      ".cursor/extracts/test/readiness.md",
+      ".cursor/extracts/wire/integration.md",
       ".cursor/extracts/verify-gate.md"
+    ],
+    "model": [
+      ".cursor/extracts/core/agent-discipline.md"
     ],
     "unit": [
       ".cursor/extracts/core/agent-discipline.md",
@@ -26,42 +39,13 @@
       ".cursor/extracts/portal-unit-workflow.md",
       ".cursor/extracts/verify-gate.md"
     ],
-    "model": [
+    "test": [
       ".cursor/extracts/core/agent-discipline.md",
-      ".cursor/extracts/legacy/project-config.md"
-    ],
-    "api": [
-      ".cursor/extracts/core/agent-discipline.md",
-      ".cursor/extracts/legacy/project-config.md",
+      ".cursor/extracts/test/readiness.md",
       ".cursor/extracts/verify-gate.md"
     ],
-    "wire": [
+    "grill-test": [
       ".cursor/extracts/core/agent-discipline.md",
-      ".cursor/extracts/legacy/project-config.md",
-      ".cursor/extracts/verify-gate.md",
-      ".cursor/extracts/wire/integration.md"
-    ],
-    "grill-api": [
-      ".cursor/extracts/core/agent-discipline.md"
-    ],
-    "platform-ai": [
-      ".cursor/extracts/extract-registry.json"
-    ],
-    "platform-mark": [
-      ".cursor/extracts/core/agent-discipline.md",
-      ".cursor/extracts/platform-mark.md",
-      ".cursor/extracts/platform-mark-detect.md",
-      ".cursor/extracts/platform-design-registry.md",
-      ".cursor/extracts/codegen/tags.md"
-    ],
-    "prototype": [
-      ".cursor/extracts/core/agent-discipline.md",
-      ".cursor/extracts/codegen/tags.md",
-      ".cursor/extracts/legacy/project-config.md"
-    ],
-    "grill-prototype": [
-      ".cursor/extracts/core/agent-discipline.md",
-      ".cursor/extracts/platform-mark-detect.md",
       ".cursor/extracts/test/readiness.md",
       ".cursor/extracts/verify-gate.md"
     ]
