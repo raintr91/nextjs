@@ -44,25 +44,12 @@ dist
 !docker/.env.example
 docker/.env
 
-# Local project maps (repo root SSOT)
-platform-repos.local.json
-legacy-repos.local.json
-.cursor/platform-repos.local.json
-.cursor/legacy-repos.local.json
-.cursor/skills/vendor/
-.cursor/rules-vendor/
-.cursor/skills-vendor/
-
-# Optional Kilo mirror (SSOT: .cursor/skills|rules|extracts)
-.kilo/skills/
-.kilo/instructions/
-.kilo/extracts/
-.kilo/command/
-
 # CodeGraph local index
 .codegraph/
 .codegraph-*/
-
-# Generated per machine by package init
-.cursor/mcp.json
-.mcp.json
+platform-repos.local.json
+.cursor/
+.testkit/
+.kilocode/mcp.json
+.codegenkit/
+.kilocode/
