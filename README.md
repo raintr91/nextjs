@@ -20,8 +20,14 @@ FE tại root (mặc định port 3000).
 | `pnpm build` | Production build |
 | `pnpm test:unit` | Vitest |
 | `pnpm test:e2e` | Playwright |
-| `pnpm portal:gen --id <W-…\|CMP-…>` | FE codegen |
-| `pnpm testcase:gen --id <W-…\|TC-…>` | Gen Playwright từ tests hub |
+
+Gen / registry (CLI toolkit, không còn wrapper `pnpm`):
+
+```bash
+codegenkit gen --adapter=nextjs --project-root=. -- --id <W-…|CMP-…>
+codegenkit unit-gen --adapter=nextjs --project-root=. -- --spec <path>
+testkit testcase:gen --project-root=. -- --id <W-…|TC-…>
+```
 
 ## Repo này
 
@@ -35,7 +41,7 @@ Codegen engines do các toolkit sở hữu (Codegenkit / Testkit); registries SS
 Skills: `/prototype` · `/grill-prototype` · `/platform-base` · `/platform-mark` · `/wire` · `/test` · `/unit` · `/model` (+ grill-*)  
 BE/fullstack: thêm `/api` · `/grill-api`.
 
-Gen / gaps: **Artifactgraph MCP** + `pnpm portal:gen --id` / `testcase:gen` / `unit-gen`.
+Gen / gaps: **Artifactgraph MCP** + CLI `codegenkit gen|unit-gen` / `testkit testcase:gen` (skills gọi thẳng toolkit).
 
 ### Rules load
 

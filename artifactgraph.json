@@ -4,16 +4,15 @@
   "mode": "brownfield",
   "projectId": "nextjs",
   "commands": {
-    "genDry": ["pnpm", "portal:gen:dry", "--id", "{spec}"],
-    "gen": ["pnpm", "portal:gen", "--id", "{spec}"],
-    "unitGenDry": ["pnpm", "portal:unit-gen:dry", "--spec", "{spec}"],
-    "unitGen": ["pnpm", "portal:unit-gen", "--spec", "{spec}"],
-    "testcaseGenDry": ["pnpm", "testcase:gen:dry", "--id", "{spec}"],
-    "testcaseGen": ["pnpm", "testcase:gen", "--id", "{spec}"],
-    "registryValidate": ["pnpm", "portal:registry"],
-    "unitRegistry": ["pnpm", "portal:unit-registry"],
-    "e2eRegistry": ["pnpm", "portal:e2e-registry"],
-    "contractRegistry": ["pnpm", "contract:registry"]
+    "genDry": ["codegenkit", "gen:dry", "--adapter=nextjs", "--project-root=.", "--", "--id", "{spec}"],
+    "gen": ["codegenkit", "gen", "--adapter=nextjs", "--project-root=.", "--", "--id", "{spec}"],
+    "unitGenDry": ["codegenkit", "unit-gen:dry", "--adapter=nextjs", "--project-root=.", "--", "--spec", "{spec}"],
+    "unitGen": ["codegenkit", "unit-gen", "--adapter=nextjs", "--project-root=.", "--", "--spec", "{spec}"],
+    "testcaseGenDry": ["testkit", "testcase:gen:dry", "--project-root=.", "--", "--id", "{spec}"],
+    "testcaseGen": ["testkit", "testcase:gen", "--project-root=.", "--", "--id", "{spec}"],
+    "registryValidate": ["codegenkit", "registry", "--adapter=nextjs", "--project-root=."],
+    "unitRegistry": ["codegenkit", "unit-registry", "--adapter=nextjs", "--project-root=."],
+    "e2eRegistry": ["testkit", "e2e-registry", "--project-root=."]
   },
   "registries": [
     "registries/design.registry.json",
