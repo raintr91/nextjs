@@ -1,9 +1,10 @@
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
-import { defineConfig } from 'vitest/config';
+import { fileURLToPath } from 'node:url'
+import os from 'node:os'
+import path from 'node:path'
+import { defineConfig } from 'vitest/config'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const webSrc = path.resolve(__dirname, 'src');
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const webSrc = path.resolve(__dirname, 'src')
 
 export default defineConfig({
   resolve: {
@@ -13,6 +14,15 @@ export default defineConfig({
       { find: '~/tests', replacement: path.resolve(__dirname, 'tests') },
       { find: '@', replacement: webSrc },
     ],
+  },
+  server: {
+    fs: {
+      allow: [
+        __dirname,
+        path.resolve(__dirname, '../codegenkit'),
+        path.join(os.homedir(), '.platform-dna/packages/codegenkit'),
+      ],
+    },
   },
   test: {
     environment: 'happy-dom',
@@ -31,4 +41,4 @@ export default defineConfig({
       reportsDirectory: './coverage',
     },
   },
-});
+})

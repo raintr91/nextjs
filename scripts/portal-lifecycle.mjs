@@ -3,16 +3,16 @@ import { spawnSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import {
-  demotePageLifecycle,
-  syncPageLifecycleFromManifests,
-  upsertPageLifecycle
-} from '../codegen/runners/lib/page-lifecycle.mjs'
+import { nextjsCodegenLibUrl } from './lib/resolve-codegenkit.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const STAGES = new Set(['design-spec', 'prototype', 'test', 'wire'])
 
 async function main() {
+  const { syncPageLifecycleFromManifests, upsertPageLifecycle } = await import(
+    nextjsCodegenLibUrl('page-lifecycle.mjs')
+  )
+
   const [command, routePath, stage, ...rest] = process.argv.slice(2)
 
   if (command === 'sync') {

@@ -4,12 +4,7 @@ import { spawnSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import {
-  demotePageLifecycle,
-  routePathFromPageFile,
-  syncPageLifecycleFromManifests
-} from '../codegen/runners/lib/page-lifecycle.mjs'
-import { readSpecFile } from '../codegen/runners/lib/read-spec.mjs'
+import { nextjsCodegenLibUrl } from './lib/resolve-codegenkit.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -28,6 +23,13 @@ function parseArgs(argv) {
 }
 
 async function main() {
+  const {
+    demotePageLifecycle,
+    routePathFromPageFile,
+    syncPageLifecycleFromManifests
+  } = await import(nextjsCodegenLibUrl('page-lifecycle.mjs'))
+  const { readSpecFile } = await import(nextjsCodegenLibUrl('read-spec.mjs'))
+
   const options = parseArgs(process.argv.slice(2))
 
   if (!options.spec && !options.route) {
@@ -39,7 +41,7 @@ async function main() {
 
   const { specFile, featureDir } = options.spec
     ? await readSpecFile(options.spec)
-    : await resolveSpecFromRoute(root, options.route)
+    : await resolveSpecFromRoute(root, options.route, readSpecFile)
 
   const manifestPath = path.join(featureDir, 'generated', 'codegen.manifest.json')
   let manifest
@@ -165,7 +167,7 @@ async function writeRemovalHandoff(featureDir, specFile, routePath, deletedPaths
   console.log(`  handoff: ${path.relative(root, handoffPath)}`)
 }
 
-async function resolveSpecFromRoute(root, route) {
+async function resolveSpecFromRoute(root, route, readSpecFile) {
   const { readFile: rf } = await import('node:fs/promises')
   const registry = JSON.parse(await rf(path.join(root, 'registries/page-lifecycle.registry.json'), 'utf8'))
   const normalized = route.startsWith('/') ? route.replace(/\/$/, '') || '/' : `/${route}`

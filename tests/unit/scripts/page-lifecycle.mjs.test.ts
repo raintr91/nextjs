@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import {
-  resolveLifecycleStage,
-  routePathFromPageFile
-} from '../../../codegen/runners/lib/page-lifecycle.mjs'
+import { nextjsCodegenLibUrl } from '../../../scripts/lib/resolve-codegenkit.mjs'
+
+const { resolveLifecycleStage, routePathFromPageFile } = await import(
+  nextjsCodegenLibUrl('page-lifecycle.mjs')
+)
 
 describe('page-lifecycle.mjs helpers', () => {
   it('maps Next page file to route path', () => {
