@@ -158,7 +158,7 @@ async function writeRemovalHandoff(featureDir, specFile, routePath, deletedPaths
     '## Restore',
     '',
     '```bash',
-    `pnpm portal:gen --spec ${specFile} --force`,
+    `codegenkit gen --adapter=nextjs --project-root=. -- --spec ${specFile} --force`,
     '```',
     ''
   ]

@@ -1,6 +1,6 @@
 {
   "name": "portal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -8,22 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "phase:gen": "node scripts/run-phase.mjs gen",
-    "phase:unit": "node scripts/run-phase.mjs unit",
-    "phase:e2e": "node scripts/run-phase.mjs e2e",
     "extracts:validate": "node scripts/extracts/validate.mjs",
-    "contract:gen": "node scripts/contract-gen.mjs",
-    "contract:gen:dry": "node scripts/contract-gen.mjs --dry-run",
-    "contract:registry": "node scripts/contract-gen.mjs --registry",
-    "portal:gen": "codegenkit gen --adapter=nextjs --project-root=. --",
-    "portal:gen:dry": "codegenkit gen:dry --adapter=nextjs --project-root=. --",
-    "portal:registry": "codegenkit registry --adapter=nextjs --project-root=.",
-    "portal:unit-gen": "codegenkit unit-gen --adapter=nextjs --project-root=. --",
-    "portal:unit-gen:dry": "codegenkit unit-gen:dry --adapter=nextjs --project-root=. --",
-    "portal:unit-registry": "codegenkit unit-registry --adapter=nextjs --project-root=.",
-    "portal:e2e-registry": "testkit e2e-registry --project-root=.",
-    "testcase:gen": "testkit testcase:gen --project-root=. --",
-    "testcase:gen:dry": "testkit testcase:gen:dry --project-root=. --",
     "portal:lifecycle": "node scripts/portal-lifecycle.mjs",
     "portal:remove": "node scripts/portal-remove.mjs",
     "test:unit": "vitest run",
@@ -34,9 +19,7 @@
     "test:e2e": "bash scripts/e2e_test.sh",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:report": "playwright show-report",
-    "ui:add": "pnpm exec shadcn add",
-    "gen:id": "codegenkit gen --adapter=nextjs --project-root=. -- --id",
-    "test:gen:id": "testkit testcase:gen --project-root=. -- --id"
+    "ui:add": "pnpm exec shadcn add"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
