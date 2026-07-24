@@ -2,13 +2,6 @@
 .next/
 out/
 
-# Legacy Nuxt (safe to delete if present)
-.output
-.data
-.nuxt
-.nitro
-.nuxt-e2e
-
 # Node
 node_modules
 .pnpm-store
@@ -37,6 +30,10 @@ stories/auto/
 .cache
 dist
 
+#pnpm
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
 # Env
 .env
 .env.*
@@ -44,12 +41,7 @@ dist
 !docker/.env.example
 docker/.env
 
-# CodeGraph local index
+# CodeGraph is outside the toolkit-managed ignore contract.
 .codegraph/
 .codegraph-*/
-platform-repos.local.json
-.cursor/
-.testkit/
-.kilocode/mcp.json
-.codegenkit/
-.kilocode/
+
